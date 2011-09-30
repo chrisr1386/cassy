@@ -1,3 +1,9 @@
+# About this fork
+
+This fork is simply to update cassy to Rails 3.1 until the main for does so.
+
+I have also created a 'stable' branch which is currently set to the last commit that work for me. The following commit causes an error on login, which I have reported.
+
 # Cassy
 
 This project is designed to be a Rails 3.0 engine that uses a large portion of the code from the [rubycas-server][https://github.com/gunark/rubycas-server] project. Certain portions of this code belong to the rubycas-server project owners.
