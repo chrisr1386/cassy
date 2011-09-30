@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version = "1.1.4"
   
   s.add_dependency 'crypt-isaac'
-  s.add_dependency 'rails', '3.0.7'
+  s.add_dependency 'rails', '3.1.1.rc2'
   
   s.add_development_dependency 'rspec-rails', '~> 2.6.0'
   s.add_development_dependency 'capybara', '~> 1.0'
