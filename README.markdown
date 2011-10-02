@@ -1,9 +1,3 @@
-# About this fork
-
-This fork is simply to update cassy to Rails 3.1 until the main fork does so.
-
-I have also created a 'stable' branch which is currently set to the last commit that work for me. The following commit causes an error on login, which I have reported.
-
 # Cassy
 
 This project is designed to be a Rails 3.0 engine that uses a large portion of the code from the [rubycas-server][https://github.com/gunark/rubycas-server] project. Certain portions of this code belong to the rubycas-server project owners.
@@ -57,7 +51,7 @@ These configuration options are detailed here for your convenience. For specific
 * `username_field`: Defines the field on the users table which is used for the lookup for the username. Defaults to " username".
 * `username_label`: Allows for the "Username" label on the sign in page to be given a different value. Helpful if you want to call it "Email" or "User Name" instead.
 * `client_app_user_field`: Defines the field name for the username on the *client* application side.
-* `service_list`: List of services that use this server to authenticate.
+* `service_list`: List of services that use this server to authenticate. Also accepts wildcard subdomains such as http://\*.mydomain.com/users/service. This allows login from any subdomain at mydomain.com (also known as "Basecamp-style" subdomains) for use with apps where users get their own subdomain. Note this only works for first level subdomains (for example http://\*.mydomain.com/users/service but not http://sub.*.mydomain.com/users/service)
 
 
 For your viewing pleasure, here is a sample `cassy.yml` file:
@@ -75,6 +69,7 @@ For your viewing pleasure, here is a sample `cassy.yml` file:
       - http://localhost:3000/users/service
       - http://localhost:3001/users/service
       - http://localhost:3002/users/service
+      - http://*.mydomain.com/users/service # wildcard subdomain
     authenticator:
       class: Cassy::Authenticators::Devise
     extra_attributes:
