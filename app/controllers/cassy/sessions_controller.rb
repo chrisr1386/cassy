@@ -162,7 +162,7 @@ module Cassy
       
       t, @error = validate_proxy_ticket(@service, @ticket)
       @success = t && !@error
-      
+      debugger
       @extra_attributes = {}
       if @success
         @username = ticketed_user(t)[settings[:client_app_user_field]]
