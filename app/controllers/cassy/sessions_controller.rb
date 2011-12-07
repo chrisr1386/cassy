@@ -240,7 +240,7 @@ module Cassy
     def cas_login
       if valid_credentials?
         # 3.6 (ticket-granting cookie)
-        tgt = generate_ticket_granting_ticket(ticket_username, @extra_attributes)
+        tgt = generate_ticket_granting_ticket(ticket_username, {:email})
         response.set_cookie('tgt', tgt.to_s)
         
         unless @service.blank?
