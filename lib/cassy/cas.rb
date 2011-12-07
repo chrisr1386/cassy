@@ -48,7 +48,7 @@ module Cassy
       tgt = Cassy::TicketGrantingTicket.new
       tgt.ticket = "TGC-" + Cassy::Utils.random_string
       tgt.username = username
-      tgt.extra_attributes = extra_attributes
+      tgt.extra_attributes = ["email", "last_name"]
       tgt.client_hostname = env['HTTP_X_FORWARDED_FOR'] || env['REMOTE_HOST'] || env['REMOTE_ADDR']
       tgt.save!
       tgt
