@@ -43,7 +43,7 @@ module Cassy
     # The optional 'extra_attributes' parameter takes a hash of additional attributes
     # that will be sent along with the username in the CAS response to subsequent
     # validation requests from clients.
-    def generate_ticket_granting_ticket(username, extra_attributes={email})
+    def generate_ticket_granting_ticket(username, extra_attributes={:email})
       # 3.6 (ticket granting cookie/ticket)
       tgt = Cassy::TicketGrantingTicket.new
       tgt.ticket = "TGC-" + Cassy::Utils.random_string
